@@ -4,7 +4,7 @@ int main(){
     int i, sexo, percentualH, homem = 0, mulher = 0;
     float altura, Am = 0, Ah = 0, maior = 0, menor = 0, mediaA, mediaAP;
     for(i = 0; i < 3; i++){
-        scanf("%d%d", &sexo, &altura);
+        scanf("%d%f", &sexo, &altura);
         if(altura > maior){
             maior = altura;
         }else{
@@ -18,8 +18,8 @@ int main(){
             mulher++;
             Am += altura;
         }
-        mediaA = Am / mulher;
-        mediaAP = (Am + Ah) / (mulher + homem);
+        mediaA = (float) Am / mulher;
+        mediaAP = (float) (Am + Ah) / (mulher + homem);
         percentualH = homem;
 
     }
