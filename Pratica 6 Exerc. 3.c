@@ -4,7 +4,7 @@
 
 
 int main(){
-    int i, j, x[N][N], soma = 0;
+    int i, j, x[N][N], soma, soma1;
     srand(time(NULL));
 
     for(i = 0; i < N; i++){
@@ -18,12 +18,13 @@ int main(){
         }
         printf("\n");
     }
-    //printf("\n\nSoma = %d\n", x[0][0] + x[1][1] + x[2][2]);
-    for(i = 0; i < N; i++){
-        soma  += x[i][j];
-        x[i][j++];
+    soma = 0;
+    soma1 = 0;
+    for(i= 0; i < N; i++){
+        soma += x[i][(N - 1) - i];
+        soma1 += x[i][(N - 3) + i];
     }
-    printf("Soma = &d\n", soma);
-
+    printf("Soma Diagonal Principal = %d\n", soma1);
+    printf("Soma Diagonal Secundaria = %d\n", soma);
     return 0;
 }
