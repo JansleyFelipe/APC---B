@@ -4,7 +4,7 @@
 
 
 int main(){
-    int i, j, M[tam][tam];
+    int i, j, M[tam][tam], s = 0;
     srand(time(NULL));
 
     for(i = 0; i < tam; i++){
@@ -14,16 +14,24 @@ int main(){
     }
     for(i = 0; i < tam; i++){
         for(j = 0; j < tam; j++){
-            printf("%d", M[i][j]);
+            printf("%d ", M[i][j]);
         }
         printf("\n");
     }
     printf("\n\n");
-    if(M[i][j] == M[j][i]){
-        printf("Eh simetrica\n");
-    }else{
-        printf("Nao eh simetrica\n");
+    for(i = 0; i < tam; i++){
+        for(j = 0; j < tam; j++){
+        if(i > j){
+            if(M[i][j] != M[j][i]){
+                s = 1;
+                }
+            }
         }
+    }
+    if(s)
+        printf("Nao eh simetrica\n");
+    else
+        printf("Eh simetrica\n");
 
     return 0;
 }

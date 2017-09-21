@@ -10,11 +10,11 @@ int main(){
 
     for(i = 0; i < tam; i++){
         for(j = 0; j < tam; j++){
-            M[i][j] = rand() % 5 + 1;
+            M[i][j] = rand() % 9 + 0;
         }
     }for(i = 0; i < tam; i++){
         for(j = 0; j < tam; j++){
-            printf("%d", M[i][j]);
+            printf("%d ", M[i][j]);
         }
         printf("\n");
     }for(i = 0; i < tam; i++){
@@ -36,7 +36,7 @@ int main(){
     printf("\n\n");
     for(k = 0; k < tam; k++){
         for(l = 0; l < tam; l++){
-            printf("%d", M[k][l]);
+            printf("%d ", M[k][l]);
         }
         printf("\n");
     }
