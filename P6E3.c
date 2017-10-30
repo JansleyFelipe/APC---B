@@ -1,5 +1,5 @@
 #include <stdio.h>
-#define N 3
+#define N 6
 #include <time.h>
 
 
@@ -22,7 +22,7 @@ int main(){
     soma1 = 0;
     for(i= 0; i < N; i++){
         soma += x[i][(N - 1) - i];
-        soma1 += x[i][(N - 3) + i];
+        soma1 += x[i][(N - N) + i];
     }
     printf("Soma Diagonal Principal = %d\n", soma1);
     printf("Soma Diagonal Secundaria = %d\n", soma);

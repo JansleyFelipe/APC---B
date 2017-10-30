@@ -28,7 +28,7 @@ int main(){
             }
         }
     }
-    if(s)
+    if(s == 1)
         printf("Nao eh simetrica\n");
     else
         printf("Eh simetrica\n");
