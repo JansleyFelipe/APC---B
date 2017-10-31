@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <string.h>
-#include <stdlib.h>
+#include <ctype.h>
 #include <time.h>
 
 int main(){
@@ -14,10 +14,9 @@ int main(){
     gets(palavra);
     t = strlen(palavra);
 
-    for(i = 0; i < t; i++){
+    for(i = rand() % (t - 1) + 0; i < t; i++){
         if(palavra[i] != ' '){
-            i = rand() % (t - 1) + 0;
-            palavra[i] = strupr(palavra[i]);
+            palavra[i] = toupper(palavra[i]);
         }
     }
     puts(palavra);
