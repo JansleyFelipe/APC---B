@@ -4,7 +4,7 @@ void somadiv(int x, int *y){
     *y += x;
 }
 
-int mains(){
+int main(){
     int number, i, soma = 0;
 
     printf("Digite um numero\n");
@@ -12,7 +12,7 @@ int mains(){
 
     for(i = 0; i <= number; i++){
         if(number%i == 0){
-             soma = somadiv(i, &soma);
+             somadiv(i, &soma);
         }
     }
     printf("A soma dos divisores de %d eh: %d", number, soma);
