@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 void somadiv(int x, int *y){
-    *y += x;
+    *y = x + *y;
 }
 
 int main(){
@@ -10,7 +10,7 @@ int main(){
     printf("Digite um numero\n");
     scanf("%d", &number);
 
-    for(i = 0; i <= number; i++){
+    for(i = 1; i <= number; i++){
         if(number%i == 0){
              somadiv(i, &soma);
         }
