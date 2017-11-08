@@ -17,7 +17,7 @@ int main(){
     scanf("%d", &number);
     if(number > 0){
         prova = QP(number);
-        if(prova == 1){
+        if(prova){
             printf("%d eh um quadrado perfeito\n", number);
         }
         else{
