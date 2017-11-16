@@ -10,13 +10,13 @@ typedef struct alunos alunos;
 
 #define tam 3
 void Leitura(alunos a[]);
-void IdadeMedia(alunos a[], int *idademaior, int *idademenor);
+void IdadeMedia(alunos a[], int *Imaior, int *Imenor);
 float MediaSala(alunos a[]);
 void PercentualAlunos(alunos a[], float mediasala, float *percentual);
 
 int main(){
     alunos v[tam];
-    int idademaior = v[0].idade, idademenor = v[0].idade;
+    int idademaior, idademenor;
     float mediasala, percentual = 0;
 
     Leitura(v);
@@ -26,7 +26,7 @@ int main(){
     mediasala = MediaSala(v);
     printf("\n A media da sala eh: %.1f", mediasala);
     PercentualAlunos(v, mediasala, &percentual);
-    printf("\n O percentual de alunos que possui a media maior que a media da sala eh: %%%.1f", percentual);
+    printf("\n O percentual de alunos que possui a media maior que a media da sala eh: %%%.1f\n\n", percentual);
 
     return 0;
 }
@@ -34,24 +34,28 @@ int main(){
 void Leitura(alunos a[]){
     int i;
     for(i = 0; i < tam; i++){
-        system("cls");
+        //system("clear");
         printf("\n Aluno: %d", i);
         printf("\n\n Media: ");
         scanf("%f", &a[i].media);
-        printf("\n Idade: ");
+        printf("\n\n Idade: ");
         scanf("%d", &a[i].idade);
     }
 }
 
-void IdadeMedia(alunos a[], int *idademaior, int *idademenor){
+void IdadeMedia(alunos a[], int *Imaior, int *Imenor){
     int i;
-    float maior = a[0].media, menor = a[0].media;
+    float maior = 0, menor = 0;
+    *Imaior = a[0].idade;
+    *Imenor = a[0].idade;
     for(i = 0; i < tam; i++){
         if(a[i].media > maior){
-            *idademaior = a[i].idade;
+            *Imaior = a[i].idade;
+            maior = a[i].media;
         }
         if(a[i].media < menor){
-            *idademenor = a[i].idade;
+            *Imenor = a[i].idade;
+            menor = a[i].media;
         }
     }
 }
@@ -72,5 +76,5 @@ void PercentualAlunos(alunos a[], float mediasala, float *percentual){
             count++;
         }
     }
-    *percentual = count/tam;
-}
+    *percentual = (float)count/tam;
+   }
